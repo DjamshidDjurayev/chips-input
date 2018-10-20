@@ -1,0 +1,55 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+  <RelativeLayout
+      android:id="@+id/input_tags_container"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="60dp"
+      android:layout_marginLeft="16dp"
+      android:layout_marginRight="16dp"
+      android:layout_marginTop="16dp"
+      android:background="@drawable/address_input_background"
+      android:visibility="visible"
+      >
+
+    <co.djuraev.chipsinput.chips.ChipsEditText
+        android:id="@+id/tag_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:hint="Input tags"
+        android:paddingBottom="16dp"
+        android:paddingEnd="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingStart="16dp"
+        android:paddingTop="16dp"
+        android:scrollbars="vertical"
+        android:textAllCaps="false"
+        android:textColor="#8f000000"
+        android:textColorHint="#aeaeae"
+        android:textSize="16sp"
+        app:chipBackground="@drawable/chip_background_drawable"
+        app:chipBackgroundPressed="@drawable/chip_background_drawable_pressed"
+        app:chipDelete="@drawable/baseline_cancel_white_48dp"
+        app:chipIcon="@drawable/ic_contact_picture"
+        >
+
+    </co.djuraev.chipsinput.chips.ChipsEditText>
+
+  </RelativeLayout>
+
+  <Button
+      android:id="@+id/button_chips"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="getAllChips"
+      />
+
+</LinearLayout>

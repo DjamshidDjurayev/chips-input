@@ -1,0 +1,5 @@
+<resources>
+  <string name="app_name">ChipsInput</string>
+  <string name="copy">Copy</string>
+  <string name="done">Return</string>
+</resources>
