@@ -7,12 +7,12 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import co.djuraev.chipsinput.chips.ChipItem;
-import co.djuraev.chipsinput.chips.ChipsEditText;
+import co.djuraev.chipsinput.chips.RecipientEditTextView;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-  @BindView(R.id.tag_input) ChipsEditText tagsInput;
+  @BindView(R.id.tag_input) RecipientEditTextView tagsInput;
 
   private List<ChipItem> suggestions = new ArrayList<>();
   private final List<String> chips = new ArrayList<>();

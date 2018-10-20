@@ -18,7 +18,7 @@
       android:visibility="visible"
       >
 
-    <co.djuraev.chipsinput.chips.ChipsEditText
+    <co.djuraev.chipsinput.chips.RecipientEditTextView
         android:id="@+id/tag_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -41,7 +41,7 @@
         app:chipIcon="@drawable/ic_contact_picture"
         >
 
-    </co.djuraev.chipsinput.chips.ChipsEditText>
+    </co.djuraev.chipsinput.chips.RecipientEditTextView>
 
   </RelativeLayout>
 

@@ -83,7 +83,7 @@ import java.util.List;
  * RecipientEditTextView is an auto complete text view for use with applications that use the new Chips UI for
  * addressing a message to recipients.
  */
-public class ChipsEditText extends AppCompatMultiAutoCompleteTextView
+public class RecipientEditTextView extends AppCompatMultiAutoCompleteTextView
     implements Callback, GestureDetector.OnGestureListener, OnDismissListener,
     TextView.OnEditorActionListener {
 
@@ -93,7 +93,7 @@ public class ChipsEditText extends AppCompatMultiAutoCompleteTextView
   private static final char COMMIT_CHAR_SPACE = ' ';
   private static final String SEPARATOR =
       String.valueOf(COMMIT_CHAR_COMMA) + String.valueOf(COMMIT_CHAR_SPACE);
-  private static final String TAG = ChipsEditText.class.getSimpleName();
+  private static final String TAG = RecipientEditTextView.class.getSimpleName();
   private static final int DISMISS = "dismiss".hashCode();
   static final int CHIP_LIMIT = 2;
   private static final int MAX_CHIPS_PARSED = 50;
@@ -147,7 +147,7 @@ public class ChipsEditText extends AppCompatMultiAutoCompleteTextView
     void onDataChanged();
   }
 
-  public ChipsEditText(final Context context, final AttributeSet attrs) {
+  public RecipientEditTextView(final Context context, final AttributeSet attrs) {
     super(context, attrs);
     mAddTextWatcher = new Runnable() {
       @Override public void run() {
@@ -563,18 +563,18 @@ public class ChipsEditText extends AppCompatMultiAutoCompleteTextView
   }
 
   private void setChipDimensions(final Context context, final AttributeSet attrs) {
-    final TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ChipsEditText, 0, 0);
+    final TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.RecipientEditTextView, 0, 0);
     final Resources resources = getContext().getResources();
 
-    mChipBackground = a.getDrawable(R.styleable.ChipsEditText_chipBackground);
-    mChipBackgroundPressed = a.getDrawable(R.styleable.ChipsEditText_chipBackgroundPressed);
-    mChipDelete = a.getDrawable(R.styleable.ChipsEditText_chipDelete);
-    mChipPadding = a.getDimensionPixelSize(R.styleable.ChipsEditText_chipPadding, -1);
-    mChipHeight = a.getDimensionPixelSize(R.styleable.ChipsEditText_chipHeight, -1);
-    mChipFontSize = a.getDimensionPixelSize(R.styleable.ChipsEditText_chipFontSize, -1);
-    mInvalidChipBackground = a.getDrawable(R.styleable.ChipsEditText_invalidChipBackground);
-    mChipIcon = a.getDrawable(R.styleable.ChipsEditText_chipIcon);
-    mChipIconBackgroundColor = a.getColor(R.styleable.ChipsEditText_chipIconBackgroundColor, -1);
+    mChipBackground = a.getDrawable(R.styleable.RecipientEditTextView_chipBackground);
+    mChipBackgroundPressed = a.getDrawable(R.styleable.RecipientEditTextView_chipBackgroundPressed);
+    mChipDelete = a.getDrawable(R.styleable.RecipientEditTextView_chipDelete);
+    mChipPadding = a.getDimensionPixelSize(R.styleable.RecipientEditTextView_chipPadding, -1);
+    mChipHeight = a.getDimensionPixelSize(R.styleable.RecipientEditTextView_chipHeight, -1);
+    mChipFontSize = a.getDimensionPixelSize(R.styleable.RecipientEditTextView_chipFontSize, -1);
+    mInvalidChipBackground = a.getDrawable(R.styleable.RecipientEditTextView_invalidChipBackground);
+    mChipIcon = a.getDrawable(R.styleable.RecipientEditTextView_chipIcon);
+    mChipIconBackgroundColor = a.getColor(R.styleable.RecipientEditTextView_chipIconBackgroundColor, -1);
 
     mLineSpacingExtra = resources.getDimension(R.dimen.line_spacing_extra);
 
@@ -1644,7 +1644,7 @@ public class ChipsEditText extends AppCompatMultiAutoCompleteTextView
   }
 
   /**
-   * Handles pasting a {@link ClipData} to this {@link ChipsEditText}.
+   * Handles pasting a {@link ClipData} to this {@link RecipientEditTextView}.
    */
   private void handlePasteClip(final ClipData clip) {
     removeTextChangedListener(mTextWatcher);
