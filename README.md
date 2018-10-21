@@ -9,7 +9,7 @@ This project contains modified and reduced type of Android Open Source Project (
 
 In your activity add this.
 
-```javascript
+```java
     suggestions.add(new ChipItem(1, "Suggest1"));
     suggestions.add(new ChipItem(2, "Suggest2"));
     suggestions.add(new ChipItem(3, "Suggest3"));
@@ -53,4 +53,12 @@ Then create your xml files and add this.
         app:chipDelete="@drawable/baseline_cancel_white_48dp"
         app:chipIcon="@drawable/ic_contact_picture"
         />
+```
+## Allow chips duplication
+``` java
+chipsInput.setmChipAllowDuplicate(true);
+```
+## or
+``` xml
+app:chipAllowDuplicate="true"
 ```
