@@ -29,17 +29,17 @@ public class MainActivity extends AppCompatActivity {
     suggestions.add(new ChipItem(5, "Suggest5"));
 
     chips.add("Chip1");
-    chips.add("Chip2");
+    chips.add("Chip1");
     chips.add("Chip3");
-    chips.add("Chip4");
+    chips.add("Chip5");
     chips.add("Chip5");
 
-    SuggestionsAdapter tagHintsAdapter
+    SuggestionsAdapter suggestionsAdapter
         = new SuggestionsAdapter(this, suggestions);
 
-    chipsInput.setmChipAllowDuplicate(true);
+    chipsInput.setmChipAllowDuplicate(false);
     chipsInput.setThreshold(2);
-    chipsInput.setAdapter(tagHintsAdapter);
+    chipsInput.setAdapter(suggestionsAdapter);
     chipsInput.setChipsList(chips);
   }
 
