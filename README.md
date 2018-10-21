@@ -32,7 +32,7 @@ In your activity add this.
 ```
 Then create your xml files and add this.
 ``` xml
-<co.djuraev.chipsinput.chips.ChipsEditText
+<co.djuraev.chipsinput.chips.RecipientEditTextView
         android:id="@+id/tag_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
