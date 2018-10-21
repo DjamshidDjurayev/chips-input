@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-  @BindView(R.id.tag_input) RecipientEditTextView tagsInput;
+  @BindView(R.id.tag_input) RecipientEditTextView chipsInput;
 
   private List<ChipItem> suggestions = new ArrayList<>();
   private final List<String> chips = new ArrayList<>();
@@ -34,15 +34,16 @@ public class MainActivity extends AppCompatActivity {
     chips.add("Chip4");
     chips.add("Chip5");
 
-    TagHintsAdapter tagHintsAdapter
-        = new TagHintsAdapter(this, suggestions);
+    SuggestionsAdapter tagHintsAdapter
+        = new SuggestionsAdapter(this, suggestions);
 
-    tagsInput.setThreshold(2);
-    tagsInput.setAdapter(tagHintsAdapter);
-    tagsInput.setChipsList(chips);
+    chipsInput.setmChipAllowDuplicate(true);
+    chipsInput.setThreshold(2);
+    chipsInput.setAdapter(tagHintsAdapter);
+    chipsInput.setChipsList(chips);
   }
 
   @OnClick(R.id.button_chips) protected void onChipsButtonClicked() {
-    Toast.makeText(this, tagsInput.getAllChipsValue().toString(), Toast.LENGTH_LONG).show();
+    Toast.makeText(this, chipsInput.getAllChipsValue().toString(), Toast.LENGTH_LONG).show();
   }
 }

@@ -138,6 +138,15 @@ public class RecipientEditTextView extends AppCompatMultiAutoCompleteTextView
   private final EnumSet<FocusBehavior> mFocusBehavior = EnumSet.allOf(FocusBehavior.class);
   private int mStartTouchY = -1;
   private boolean mIsScrolling = false;
+  private boolean mChipAllowDuplicate;
+
+  public boolean ismChipAllowDuplicate() {
+    return mChipAllowDuplicate;
+  }
+
+  public void setmChipAllowDuplicate(boolean mChipAllowDuplicate) {
+    this.mChipAllowDuplicate = mChipAllowDuplicate;
+  }
 
   public enum FocusBehavior {
     SHRINK_WHEN_LOST_FOCUS, EXPAND_WHEN_GOT_FOCUS
@@ -575,6 +584,7 @@ public class RecipientEditTextView extends AppCompatMultiAutoCompleteTextView
     mInvalidChipBackground = a.getDrawable(R.styleable.RecipientEditTextView_invalidChipBackground);
     mChipIcon = a.getDrawable(R.styleable.RecipientEditTextView_chipIcon);
     mChipIconBackgroundColor = a.getColor(R.styleable.RecipientEditTextView_chipIconBackgroundColor, -1);
+    mChipAllowDuplicate = a.getBoolean(R.styleable.RecipientEditTextView_chipAllowDuplicate, false);
 
     mLineSpacingExtra = resources.getDimension(R.dimen.line_spacing_extra);
 
@@ -1349,6 +1359,15 @@ public class RecipientEditTextView extends AppCompatMultiAutoCompleteTextView
     if (TextUtils.isEmpty(displayText)) {
       return null;
     }
+
+    // allow or restrict chip duplicate
+    if (!mChipAllowDuplicate) {
+      if (isChipAlreadyExist(entry)) {
+        sanitizeEnd();
+        return null;
+      }
+    }
+
     SpannableString chipText;
     final int textLength = displayText.length() - 1;
     chipText = new SpannableString(displayText);
@@ -1363,6 +1382,18 @@ public class RecipientEditTextView extends AppCompatMultiAutoCompleteTextView
       }
     }
     return chipText;
+  }
+
+  // check if entry chip already exists
+  private boolean isChipAlreadyExist(ChipItem entry) {
+    boolean exist = false;
+    for (int i = 0; i < getAllChipsValue().size(); i++) {
+      if (entry.getTitle().equals(getAllChipsValue().get(i))) {
+        exist = true;
+        break;
+      }
+    }
+    return exist;
   }
 
   private void submitItemAtPosition(final int position) {

@@ -21,5 +21,6 @@
     <attr name="chipFontSize" format="reference" />
     <attr name="chipIcon" format="reference" />
     <attr name="chipIconBackgroundColor" format="reference|color" />
+    <attr name="chipAllowDuplicate" format="boolean" />
   </declare-styleable>
 </resources>

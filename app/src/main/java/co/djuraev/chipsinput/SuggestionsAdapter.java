@@ -14,12 +14,12 @@ import co.djuraev.chipsinput.chips.ChipItem;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TagHintsAdapter extends BaseAdapter implements Filterable {
+public class SuggestionsAdapter extends BaseAdapter implements Filterable {
   private LayoutInflater layoutInflater;
   private List<ChipItem> categoryTags;
   private List<ChipItem> filterableTags;
 
-  public TagHintsAdapter(Context context, List<ChipItem> categoryTags) {
+  SuggestionsAdapter(Context context, List<ChipItem> categoryTags) {
     this.categoryTags = new ArrayList<>(categoryTags);
     this.filterableTags = new ArrayList<>(categoryTags);
     layoutInflater = LayoutInflater.from(context);
