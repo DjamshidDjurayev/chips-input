@@ -22,12 +22,13 @@ In your activity add this.
     chips.add("Chip4");
     chips.add("Chip5");
 
-    TagHintsAdapter tagHintsAdapter
-        = new TagHintsAdapter(this, suggestions);
+    SuggestionsAdapter suggestionsAdapter
+        = new SuggestionsAdapter(this, suggestions);
 
-    tagsInput.setThreshold(2);
-    tagsInput.setAdapter(tagHintsAdapter);
-    tagsInput.setChipsList(chips);
+    chipsInput.setmChipAllowDuplicate(false);
+    chipsInput.setThreshold(2);
+    chipsInput.setAdapter(suggestionsAdapter);
+    chipsInput.setChipsList(chips);
 ```
 Then create your xml files and add this.
 ``` xml
@@ -52,13 +53,7 @@ Then create your xml files and add this.
         app:chipBackgroundPressed="@drawable/chip_background_drawable_pressed"
         app:chipDelete="@drawable/baseline_cancel_white_48dp"
         app:chipIcon="@drawable/ic_contact_picture"
+        app:chipAllowDuplicate="true"
         />
 ```
-## Allow chips duplication
-``` java
-chipsInput.setmChipAllowDuplicate(true);
-```
-## or
-``` xml
-app:chipAllowDuplicate="true"
-```
+
