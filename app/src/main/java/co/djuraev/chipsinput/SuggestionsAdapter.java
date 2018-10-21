@@ -64,7 +64,7 @@ public class SuggestionsAdapter extends BaseAdapter implements Filterable {
       List<ChipItem> list = new ArrayList<>();
 
       for (int i = 0; i < categoryTags.size(); i++) {
-        if (categoryTags.get(i).getTitle().contains(charSequence)) {
+        if (categoryTags.get(i).getTitle().toLowerCase().contains(charSequence.toString().toLowerCase())) {
           list.add(categoryTags.get(i));
         }
       }
